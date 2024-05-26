@@ -6,7 +6,7 @@ install() {
   set_raspi_config
   set_ssh_qos
   update_raspi_os
-  init_git_repo_from_tardir
+  #init_git_repo_from_tardir
   setup_jukebox_core
   setup_mpd
   setup_samba

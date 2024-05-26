@@ -24,7 +24,7 @@ CURRENT_USER="${SUDO_USER:-$(whoami)}"
 CURRENT_USER_GROUP=$(id -gn "$CURRENT_USER")
 HOME_PATH=$(getent passwd "$CURRENT_USER" | cut -d: -f6)
 
-INSTALLATION_PATH="${HOME_PATH}/${GIT_REPO_NAME}"
+INSTALLATION_PATH="${HOME_PATH}/gitprojects/${GIT_REPO_NAME}"
 INSTALL_ID=$(date +%s)
 INSTALLATION_LOGFILE="${HOME_PATH}/INSTALL-${INSTALL_ID}.log"
 
@@ -94,13 +94,13 @@ _check_os_type() {
 
   print_lc "\nChecking OS type '$os_type'"
 
-  if [[ $os_type == "armv7l" || $os_type == "armv6l" ]]; then
-    print_lc "  ... OK!\n"
-  else
-    print_lc "ERROR: Only 32-bit operating systems are supported. Please use a 32-bit version of Raspberry Pi OS!"
-    print_lc "For Pi 4 models or newer running a 64-bit kernels, also see this: https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/2041"
-    exit 1
-  fi
+#  if [[ $os_type == "armv7l" || $os_type == "armv6l" ]]; then
+#    print_lc "  ... OK!\n"
+#  else
+#    print_lc "ERROR: Only 32-bit operating systems are supported. Please use a 32-bit version of Raspberry Pi OS!"
+#    print_lc "For Pi 4 models or newer running a 64-bit kernels, also see this: https://github.com/MiczFlor/RPi-Jukebox-RFID/issues/2041"
+#    exit 1
+#  fi
 }
 
 _check_existing_installation() {
@@ -155,14 +155,14 @@ _setup_logging
 
 ### CHECK PREREQUISITE
 _check_os_type
-_check_existing_installation
+# _check_existing_installation
 
 ### RUN INSTALLATION
 log "Current User: $CURRENT_USER"
 log "User home dir: $HOME_PATH"
 
-_download_jukebox_source
-cd "${INSTALLATION_PATH}" || exit_on_error "ERROR: Changing to install dir failed."
+# _download_jukebox_source
+# cd "${INSTALLATION_PATH}" || exit_on_error "ERROR: Changing to install dir failed."
 _load_sources
 
 welcome

@@ -12,3 +12,5 @@ update_raspi_os() {
         run_with_log_frame _run_update_raspi_os "Updating Raspberry Pi OS"
     fi
 }
+
+_run_update_raspi_os 
