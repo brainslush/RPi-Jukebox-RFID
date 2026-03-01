@@ -13,9 +13,15 @@ import datetime
 from datetime import date
 from datetime import time as Time
 from pathlib import Path
-from typing import Annotated, Literal, Optional, Tuple, Union
+from typing import Annotated, Literal, NewType, Optional, Tuple, Union
 
 from pydantic import BaseModel, Field
+
+# ---------------------------------------------------------------------------
+# Domain types
+# ---------------------------------------------------------------------------
+
+AlarmId = NewType('AlarmId', str)
 
 
 def _system_timezone() -> str:
