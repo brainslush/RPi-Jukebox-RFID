@@ -301,6 +301,64 @@
     },
     "systemcontrols": {
       "title": "Systemsteuerung"
+    },
+    "alarms": {
+      "title": "Wecker",
+      "no-alarms": "Keine Wecker konfiguriert.",
+      "add": "Wecker hinzufügen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "enabled": "Aktiviert",
+      "next-fire": "Nächster: {{datetime}}",
+      "never": "Nie",
+      "dialog": {
+        "title-add": "Neuer Wecker",
+        "title-edit": "Wecker bearbeiten",
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "label": "Name (optional)",
+        "time": "Uhrzeit",
+        "schedule": "Zeitplan",
+        "days": "Wochentage",
+        "presets": {
+          "daily": "Täglich",
+          "weekdays": "Werktags",
+          "weekends": "Wochenende",
+          "custom": "Benutzerdefiniert"
+        },
+        "end-date": "Enddatum (optional)",
+        "once-date": "Datum",
+        "content": "Inhalt",
+        "content-card-id": "Karten-ID",
+        "content-scan": "Karte scannen",
+        "content-scanning": "Scanne...",
+        "volume": "Lautstärke",
+        "fade-in": "Einblenden",
+        "start-volume": "Startlautstärke",
+        "target-volume": "Ziellautstärke",
+        "max-duration": "Maximale Dauer",
+        "max-duration-off": "Kein Limit",
+        "snooze": "Schlummerdauer",
+        "snooze-off": "Kein Schlummer",
+        "post-alarm": "Nach dem Wecker",
+        "post-alarm-stop": "Wiedergabe stoppen",
+        "post-alarm-resume": "Wiedergabe fortsetzen",
+        "catch-up": "Nachholzeit (Sekunden)"
+      },
+      "active": {
+        "title": "Wecker klingelt",
+        "dismiss": "Ausschalten",
+        "snooze": "Schlummern"
+      },
+      "days-short": {
+        "mon": "Mo",
+        "tue": "Di",
+        "wed": "Mi",
+        "thu": "Do",
+        "fri": "Fr",
+        "sat": "Sa",
+        "sun": "So"
+      }
     }
   }
 }

@@ -303,6 +303,64 @@
     },
     "systemcontrols": {
       "title": "System Controls"
+    },
+    "alarms": {
+      "title": "Alarms",
+      "no-alarms": "No alarms configured.",
+      "add": "Add Alarm",
+      "edit": "Edit",
+      "delete": "Delete",
+      "enabled": "Enabled",
+      "next-fire": "Next: {{datetime}}",
+      "never": "Never",
+      "dialog": {
+        "title-add": "New Alarm",
+        "title-edit": "Edit Alarm",
+        "save": "Save",
+        "cancel": "Cancel",
+        "label": "Name (optional)",
+        "time": "Time",
+        "schedule": "Schedule",
+        "days": "Days",
+        "presets": {
+          "daily": "Daily",
+          "weekdays": "Weekdays",
+          "weekends": "Weekends",
+          "custom": "Custom"
+        },
+        "end-date": "End Date (optional)",
+        "once-date": "Date",
+        "content": "Content",
+        "content-card-id": "Card ID",
+        "content-scan": "Scan Card",
+        "content-scanning": "Scanning...",
+        "volume": "Volume",
+        "fade-in": "Fade In",
+        "start-volume": "Start Volume",
+        "target-volume": "Target Volume",
+        "max-duration": "Max Duration",
+        "max-duration-off": "No limit",
+        "snooze": "Snooze Duration",
+        "snooze-off": "No snooze",
+        "post-alarm": "After alarm",
+        "post-alarm-stop": "Stop playback",
+        "post-alarm-resume": "Resume playback",
+        "catch-up": "Catch-up window (seconds)"
+      },
+      "active": {
+        "title": "Alarm ringing",
+        "dismiss": "Dismiss",
+        "snooze": "Snooze"
+      },
+      "days-short": {
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat",
+        "sun": "Sun"
+      }
     }
   }
 }
