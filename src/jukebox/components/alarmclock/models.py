@@ -22,6 +22,7 @@ from pydantic import BaseModel, Field
 # ---------------------------------------------------------------------------
 
 AlarmId = NewType('AlarmId', str)
+CardId = NewType('CardId', str)
 
 
 def _system_timezone() -> str:
@@ -102,7 +103,7 @@ class AlarmVolumeConfig(BaseModel):
 class AlarmContentConfig(BaseModel):
     """Content (RFID card) to play for an alarm."""
 
-    card_id: Optional[str] = None
+    card_id: Optional[CardId] = None
 
     model_config = {'extra': 'ignore'}
 
@@ -137,7 +138,7 @@ class AlarmConfig(BaseModel):
 class AlarmFallback(BaseModel):
     """Global fallback audio configuration."""
 
-    card_id: Optional[str] = None
+    card_id: Optional[CardId] = None
     file: Optional[Path] = None
 
     model_config = {'extra': 'ignore'}
@@ -148,5 +149,19 @@ class AlarmSettings(BaseModel):
 
     timezone: str = Field(default_factory=_system_timezone)
     fallback: AlarmFallback = Field(default_factory=AlarmFallback)
+
+    model_config = {'extra': 'ignore'}
+
+
+# ---------------------------------------------------------------------------
+# Active alarm state (published via PubSub)
+# ---------------------------------------------------------------------------
+
+class AlarmActiveState(BaseModel):
+    """Snapshot of an actively firing or snoozed alarm, suitable for PubSub."""
+
+    alarm_id: AlarmId | None = None
+    state: Literal['firing', 'snoozed'] | None = None
+    label: str = ''
 
     model_config = {'extra': 'ignore'}
