@@ -15,6 +15,7 @@ pyalsaaudio
 pulsectl
 python-mpd2
 ruamel.yaml
+pydantic>=2.0
 # For playlistgenerator
 requests
 # For the publisher event reactor loop:
