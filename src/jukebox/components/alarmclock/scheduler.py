@@ -149,7 +149,7 @@ class AlarmScheduler:
             self._wakeup.clear()
             alarm_id, alarm_cfg, fire_dt = self._find_next()
 
-            if fire_dt is None:
+            if alarm_id is None or alarm_cfg is None or fire_dt is None:
                 logger.debug("No pending alarms — sleeping indefinitely")
                 self._wakeup.wait()
                 continue
