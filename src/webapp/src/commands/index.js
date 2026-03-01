@@ -294,6 +294,48 @@ const commands = {
     method: 'sync_change_on_rfid_scan',
     argKeys: ['option']
   },
+
+  // Alarm Clock
+  alarmsList: {
+    _package: 'alarmclock',
+    plugin: 'list',
+  },
+  alarmsAdd: {
+    _package: 'alarmclock',
+    plugin: 'add',
+    argKeys: ['alarm_config'],
+  },
+  alarmsUpdate: {
+    _package: 'alarmclock',
+    plugin: 'update',
+    argKeys: ['alarm_id', 'diff'],
+  },
+  alarmsDelete: {
+    _package: 'alarmclock',
+    plugin: 'delete',
+    argKeys: ['alarm_id'],
+  },
+  alarmsSetEnabled: {
+    _package: 'alarmclock',
+    plugin: 'set_enabled',
+    argKeys: ['alarm_id', 'enabled'],
+  },
+  alarmsSnooze: {
+    _package: 'alarmclock',
+    plugin: 'snooze',
+  },
+  alarmsDismiss: {
+    _package: 'alarmclock',
+    plugin: 'dismiss',
+  },
+  alarmsGetActive: {
+    _package: 'alarmclock',
+    plugin: 'get_active',
+  },
+  alarmsGetNextFireTime: {
+    _package: 'alarmclock',
+    plugin: 'get_next_fire_time',
+  },
 };
 
 export default commands;
