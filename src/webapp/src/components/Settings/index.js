@@ -9,6 +9,8 @@ import SettingsSecondSwipe from './secondswipe';
 import SettingsStatus from './status/index';
 import SettingsTimers from './timers/index';
 import SystemControls from './systemcontrols';
+import ActiveAlarmBanner from './alarms/active-alarm-banner';
+import SettingsAlarms from './alarms/index';
 
 import { useTheme } from '@mui/material/styles';
 
@@ -26,6 +28,12 @@ const Settings = () => {
         padding: '10px',
       }}
     >
+      <Grid item>
+        <ActiveAlarmBanner />
+      </Grid>
+      <Grid item>
+        <SettingsAlarms />
+      </Grid>
       <Grid item>
         <SettingsStatus />
       </Grid>
