@@ -10,7 +10,8 @@ logger = logging.getLogger('jb.alarmclock.fadein')
 
 
 class FadeIn:
-    """Ramps volume linearly from `start` to `target` over `ramp_seconds` in `steps` steps.
+    """
+    Ramps volume linearly from `start` to `target` over `ramp_seconds` in `steps` steps.
 
     Designed to be used with AlarmVolumeConfig. Can run synchronously
     (run_sync) or in a background thread (start/cancel).

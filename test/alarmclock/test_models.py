@@ -151,11 +151,8 @@ def test_alarm_config_roundtrip():
     assert alarm2.schedule.days[FRI] is True
 
 
-def test_alarm_settings_uses_system_timezone():
+def test_alarm_settings_defaults():
     s = AlarmSettings()
-    # Should be a non-empty timezone string (system default, not necessarily 'UTC')
-    assert isinstance(s.timezone, str)
-    assert len(s.timezone) > 0
     assert s.fallback.card_id is None
 
 

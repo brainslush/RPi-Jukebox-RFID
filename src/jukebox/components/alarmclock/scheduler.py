@@ -85,11 +85,14 @@ class AlarmScheduler:
     The thread wakes immediately on config changes via wakeup().
     """
 
-    def __init__(self,
-                 alarms_getter: Callable[[], dict[AlarmId, AlarmConfig]],
-                 on_fire: Callable[[AlarmId, AlarmConfig], None],
-                 timezone: ZoneInfo,
-                 _now_fn: Callable[[], datetime] | None = None):
+    def __init__(
+        self,
+        alarms_getter: Callable[[],
+        dict[AlarmId, AlarmConfig]],
+        on_fire: Callable[[AlarmId, AlarmConfig], None],
+        timezone: ZoneInfo,
+        _now_fn: Callable[[], datetime] | None = None
+    ):
         """
         :param alarms_getter: Zero-arg callable returning {alarm_id: AlarmConfig}
         :param on_fire: Called with (alarm_id, alarm_config) when alarm fires

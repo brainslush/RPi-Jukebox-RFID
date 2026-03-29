@@ -60,12 +60,13 @@ _lock = threading.Lock()
 # ---------------------------------------------------------------------------
 
 def _get_timezone() -> ZoneInfo:
-    tz_name = cfg.getn('settings', 'timezone', default='UTC')
     try:
-        return ZoneInfo(tz_name)
+        local_tz = datetime.now().astimezone().tzinfo
+        if hasattr(local_tz, 'key'):
+            return ZoneInfo(local_tz.key)
     except Exception:
-        logger.warning(f"Invalid timezone '{tz_name}', falling back to UTC")
-        return ZoneInfo('UTC')
+        pass
+    return ZoneInfo('UTC')
 
 
 def _get_volume() -> int:
@@ -304,13 +305,11 @@ def finalize():
     try:
         cfg.load(config_file)
     except FileNotFoundError:
-        cfg.config_dict({'settings': {'timezone': 'UTC',
-                                      'fallback': {'card_id': None, 'file': None}},
+        cfg.config_dict({'settings': {'fallback': {'card_id': None, 'file': None}},
                          'alarms': {}})
         logger.warning(f"Alarm config not found, created empty: '{config_file}'")
         cfg.save(only_if_changed=False)
 
-    cfg.setndefault('settings', 'timezone', value='UTC')
     cfg.setndefault('settings', 'fallback', 'card_id', value=None)
     cfg.setndefault('settings', 'fallback', 'file', value=None)
 

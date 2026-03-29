@@ -1,8 +1,5 @@
 # RPi-Jukebox-RFID Alarm Clock default settings
 settings:
-  # Timezone for wall-clock alarm time interpretation
-  # Use any IANA timezone name, e.g. 'Europe/Berlin', 'America/New_York', 'UTC'
-  timezone: UTC
   # Global fallback audio when alarm content is unavailable
   # card_id takes priority over file if both are set
   fallback:
